@@ -32,7 +32,7 @@
                 <comment>Enable NAT traversal for H323</comment>
             </nat_enabled>
             <gateway_alias type="TextField">
-                <Default>OT-SA-H323</Default>
+                <Default>OTSA-H323</Default>
                 <comment>H323 gateway identifier</comment>
             </gateway_alias>
             <listen_interface type=".\H323InterfaceField">

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Copyright (C) 2026 BKCS <bkcs@hust.edu.vn>
+# Copyright (C) 2026 KC01.04-21.30 <bkcs@hust.edu.vn>
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without

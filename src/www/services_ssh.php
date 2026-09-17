@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (C) 2025 BKCS - OT Security Appliance
+ * Copyright (C) 2025 KC01.04-21.30 - OT Security Appliance
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without

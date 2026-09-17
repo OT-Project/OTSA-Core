@@ -149,7 +149,7 @@ function openssh_host_keys_known_hosts_block()
     $prefix = implode(',', $host_aliases);
 
     $lines = [
-        "# OT-SA host keys for {$fqdn}",
+        "# OTSA host keys for {$fqdn}",
         "# Generated " . date('c'),
         "# Import these entries into your SSH client's known_hosts file via an",
         "# out-of-band channel (USB, signed email, in person) — do NOT fetch over",

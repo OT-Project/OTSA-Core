@@ -1,10 +1,10 @@
-OT-SA-Core
+OTSA-Core
 ==========
 
-OT-SA-Core is the source tree for **OTSA** — the firmware/operating
-system shipped on BKCS's **OT firewall appliance**, a multi-NIC
-mini-PC deployed at the OT/IT boundary to protect Operational
-Technology (OT/ICS) networks.
+OTSA-Core is the source tree for **OTSA** — the firmware/operating
+system shipped on the **OT firewall appliance** of project
+KC01.04-21.30, a multi-NIC mini-PC deployed at the OT/IT boundary to
+protect Operational Technology (OT/ICS) networks.
 
 The codebase is a hard-fork of the upstream
 [OPNsense core](https://github.com/opnsense/core) project (FreeBSD-based
@@ -14,15 +14,15 @@ framework; this fork adds the appliance branding, Vietnamese
 localization, a custom theme, a trimmed menu set, and OT-oriented
 service defaults.
 
-Where OTSA fits in the BKCS OT product line
--------------------------------------------
+Where OTSA fits in the KC01.04-21.30 OT product line
+----------------------------------------------------
 
-The BKCS OT solution has two complementary software components, each
-running on its own appliance:
+The KC01.04-21.30 OT solution has two complementary software
+components, each running on its own appliance:
 
 | Component | Role | Hardware | Codebase | Forked from |
 |-----------|------|----------|----------|-------------|
-| **OTSA** *(this repo)* | Edge firewall — segments, filters and inspects traffic at the OT/IT boundary | Multi-NIC mini-PC | `OT-SA-Core` | `opnsense/core` |
+| **OTSA** *(this repo)* | Edge firewall — segments, filters and inspects traffic at the OT/IT boundary | Multi-NIC mini-PC | `OTSA-Core` | `opnsense/core` |
 | **OTSC** | Central management & monitoring — collects telemetry, alerts and policy from OTSA appliances | Central server | `OT-SC-*` (separate repos) | `wazuh/wazuh` |
 
 OTSA appliances are designed to interoperate with an OTSC central
@@ -35,7 +35,7 @@ Project identity
 | Field | Value |
 |-------|-------|
 | Product | OTSA |
-| Owner | BKCS — https://bkcs.hust.edu.vn |
+| Owner | KC01.04-21.30 — https://bkcs.hust.edu.vn |
 | Maintainer | bkcs@hust.edu.vn |
 | Package repository | http://192.168.150.49 |
 | License | 2-Clause BSD (inherited from OPNsense) |
@@ -55,7 +55,7 @@ conservatively to keep future syncs feasible.
   `src/share/locale/vi_VN/LC_MESSAGES/OPNsense.po` (web UI only; the
   console/shell scripts stay upstream English).
 * **Theme** — `src/opnsense/www/themes/otsa/` ("OTSA 2.0" neobrutalist
-  theme with sidebar layout, dark mode, and BKCS branding).
+  theme with sidebar layout, dark mode, and KC01.04-21.30 branding).
 * **Menu trim for OT** — entries across
   `src/opnsense/mvc/app/models/OPNsense/*/Menu/Menu.xml` are reduced
   and renamed:
@@ -137,7 +137,7 @@ Common Makefile targets:
 * `make package` — build a package from the current tree. Useful
   options include `CORE_PRODUCT`, `CORE_PACKAGESITE`,
   `CORE_MAINTAINER`, `CORE_NAME`. Defaults are set in `Makefile` and
-  `Mk/version.mk` to OTSA/BKCS values — do not revert them to
+  `Mk/version.mk` to OTSA/KC01.04-21.30 values — do not revert them to
   OPNsense defaults.
 * `make update` — pull the latest commits on the current branch from
   the configured remote.
@@ -166,6 +166,6 @@ opening a PR:
 License
 -------
 
-OT-SA-Core inherits the 2-Clause BSD license from upstream OPNsense
+OTSA-Core inherits the 2-Clause BSD license from upstream OPNsense
 (see `LICENSE`). All contributions to this fork must be licensed under
 the same terms.

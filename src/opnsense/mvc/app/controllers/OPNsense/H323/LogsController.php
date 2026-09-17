@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (c) 2024 OT-SA Firewall Project
+ * Copyright (c) 2024 OTSA Firewall Project
  * All rights reserved.
  */
 

@@ -33,7 +33,7 @@ def read_model_config():
         "rtp_port_range_start": int(general_node.findtext("rtp_port_range_start", "5000")) if general_node is not None else 5000,
         "rtp_port_range_end": int(general_node.findtext("rtp_port_range_end", "5100")) if general_node is not None else 5100,
         "nat_enabled": (general_node.findtext("nat_enabled", "1") == "1") if general_node is not None else True,
-        "gateway_alias": general_node.findtext("gateway_alias", "OT-SA-H323") if general_node is not None else "OT-SA-H323",
+        "gateway_alias": general_node.findtext("gateway_alias", "OTSA-H323") if general_node is not None else "OTSA-H323",
         "listen_interface": general_node.findtext("listen_interface", "") if general_node is not None else "",
         "deployment_mode": general_node.findtext("deployment_mode", "local") if general_node is not None else "local",
         "outbound_interface": general_node.findtext("outbound_interface", "") if general_node is not None else "",
@@ -80,7 +80,7 @@ def build_gnugk_config(model):
 
     lines = []
     lines.append("[Gatekeeper::Main]")
-    lines.append(f"Name={g.get('gateway_alias', 'OT-SA-H323')}")
+    lines.append(f"Name={g.get('gateway_alias', 'OTSA-H323')}")
     lines.append(f"Home={home_ip}")
     lines.append("")
 

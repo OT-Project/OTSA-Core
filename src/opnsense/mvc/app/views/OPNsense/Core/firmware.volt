@@ -1170,17 +1170,17 @@
                                 <td id="product_license_valid_to"></td>
                                 <td></td>
                             </tr>
-                            {# OTSA: branding BKCS #}
+                            {# OTSA: branding KC01.04-21.30 #}
                             <tr>
                                 <td style="width: 150px;">{{ lang._('Vendor') }}</td>
                                 <td>
-                                    <a href="https://bkcs.hust.edu.vn" target="_blank" rel="noopener">BKCS — Trung tâm An toàn thông tin, ĐHBKHN</a>
+                                    <a href="https://bkcs.hust.edu.vn" target="_blank" rel="noopener">KC01.04-21.30 — Trung tâm An toàn thông tin, ĐHBKHN</a>
                                 </td>
                                 <td></td>
                             </tr>
                             <tr>
                                 <td style="width: 150px;">{{ lang._('Copyright') }}</td>
-                                <td>&copy; 2026 BKCS. {{ lang._('All rights reserved.') }}</td>
+                                <td>&copy; 2026 KC01.04-21.30. {{ lang._('All rights reserved.') }}</td>
                                 <td></td>
                             </tr>
                             <tr>
@@ -1286,7 +1286,7 @@
                                         <span id="test_mirror_result" style="margin-left: 8px;"></span>
                                     </div>
                                     <div class="hidden" data-for="help_for_mirror">
-                                        {{ lang._('Default mirror là kho BKCS. Chọn "(custom)" để nhập URL khác (vd staging) rồi bấm "Test connection" để xác minh DNS, HTTP, và chữ ký pkg trước khi lưu.') }}
+                                        {{ lang._('Default mirror là kho KC01.04-21.30. Chọn "(custom)" để nhập URL khác (vd staging) rồi bấm "Test connection" để xác minh DNS, HTTP, và chữ ký pkg trước khi lưu.') }}
                                     </div>
                                 </td>
                                 <td></td>

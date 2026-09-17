@@ -1,5 +1,5 @@
 {#
- # Copyright (c) 2024 OT-SA Firewall Project
+ # Copyright (c) 2024 OTSA Firewall Project
  # All rights reserved.
  #
  # Redistribution and use in source and binary forms, with or without modification,
@@ -175,7 +175,7 @@
                                 </div>
                             </td>
                             <td>
-                                <input type="text" id="h323.general.gateway_alias" name="h323[general][gateway_alias]" class="form-control" value="OT-SA-H323" />
+                                <input type="text" id="h323.general.gateway_alias" name="h323[general][gateway_alias]" class="form-control" value="OTSA-H323" />
                                 <div class="hidden" data-for="help_for_h323_general_gateway_alias"><small>{{ lang._('Logical identifier used by the H323 gateway.') }}</small></div>
                             </td>
                             <td><span class="help-block"></span></td>
@@ -285,7 +285,7 @@ $(document).ready(function() {
                     $('[id="h323.general.rtp_port_range_start"]').val(h323.general.rtp_port_range_start || 5000);
                     $('[id="h323.general.rtp_port_range_end"]').val(h323.general.rtp_port_range_end || 5100);
                     $('[id="h323.general.nat_enabled"]').prop('checked', h323.general.nat_enabled == 1);
-                    $('[id="h323.general.gateway_alias"]').val(h323.general.gateway_alias || 'OT-SA-H323');
+                    $('[id="h323.general.gateway_alias"]').val(h323.general.gateway_alias || 'OTSA-H323');
                     $('[id="h323.general.upstream_server"]').val(h323.general.upstream_server || '');
                     
                     syncServiceStatusUI();

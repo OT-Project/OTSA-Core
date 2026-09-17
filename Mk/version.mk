@@ -33,6 +33,6 @@ CORE_TYPE?=	community
 # plugins that were migrated to core are here
 CORE_CONFLICTS?=firewall wireguard wireguard-go
 
-CORE_COPYRIGHT_HOLDER?=	BKCS
+CORE_COPYRIGHT_HOLDER?=	KC01.04-21.30
 CORE_COPYRIGHT_WWW?=	https://bkcs.hust.edu.vn
 CORE_COPYRIGHT_YEARS?=	2026
