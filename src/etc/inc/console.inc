@@ -28,9 +28,7 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-require_once('/usr/local/opnsense/scripts/shell/langmode.php');
-
-function timeout($timer = 7)
+function timeout($wait = 7)
 {
     $ret = true;
 
@@ -91,7 +89,7 @@ function _set_networking_interfaces_ports($probe = false)
     global $config;
 
     $fp = fopen('php://stdin', 'r');
-    $yes_no_prompt = __('[y/N]: ');
+    $yes_no_prompt = '[y/N]: ';
     $interactive = true;
     $key = null;
 
@@ -106,22 +104,17 @@ function _set_networking_interfaces_ports($probe = false)
     }
 
     if ($probe) {
-        echo PHP_EOL . __('Press any key to start the manual interface assignment: ') . ' ';
-
-        $key = timeout();
-        if (!isset($key)) {
-            $interactive = false;
-        }
-
-        if ($key != "\n") {
-            echo PHP_EOL;
-        }
+        echo PHP_EOL . 'Press any key to start the manual interface assignment: ';
+        $interactive = !timeout();
+        echo PHP_EOL;
     }
 
     if (!empty($iflist)) {
-        echo __('Do you want to configure LAGGs now?') . " {$yes_no_prompt}";
+        echo <<<EOD
+Do you want to configure LAGGs now? {$yes_no_prompt}
+EOD;
         if ($interactive) {
-            $key = normalize_yes_no(chop(fgets($fp)));
+            $key = chop(fgets($fp));
         } else {
             $key = 'n';
             echo $key . PHP_EOL;
@@ -141,9 +134,11 @@ function _set_networking_interfaces_ports($probe = false)
             }
         }
 
-        echo __('Do you want to configure VLANs now?') . " {$yes_no_prompt}";
+        echo <<<EOD
+Do you want to configure VLANs now? {$yes_no_prompt}
+EOD;
         if ($interactive) {
-            $key = normalize_yes_no(chop(fgets($fp)));
+            $key = chop(fgets($fp));
         } else {
             $key = 'n';
             echo $key . PHP_EOL;
@@ -171,24 +166,33 @@ function _set_networking_interfaces_ports($probe = false)
         ];
     }
 
-    echo "\n" . __('Valid interfaces are:') . "\n\n";
+    echo <<<EOD
+
+Valid interfaces are:
+
+
+EOD;
 
     if (empty($iflist_all)) {
-        echo __('No interfaces found!') . "\n";
+        echo "No interfaces found!\n";
     } else {
         foreach ($iflist_all as $iface => $ifa) {
             echo sprintf("%-16s %s %s\n", $iface, $ifa['mac'], $ifa['descr']);
         }
     }
 
-    echo "\n" . __('If you do not know the names of your interfaces, you may choose to use') . "\n";
-    echo __('auto-detection. In that case, disconnect all interfaces now before') . "\n";
-    echo __("hitting 'a' to initiate auto detection.") . "\n";
+    echo <<<EOD
+
+If you do not know the names of your interfaces, you may choose to use
+auto-detection. In that case, disconnect all interfaces now before
+hitting 'a' to initiate auto detection.
+
+EOD;
 
     $ifnames = array_keys($iflist_all); /* only for non-interactive mode */
 
     do {
-        echo "\n" . __("Enter the WAN interface name or 'a' for auto-detection: ");
+        echo "\nEnter the WAN interface name or 'a' for auto-detection: ";
 
         if ($interactive) {
             $wanif = chop(fgets($fp));
@@ -210,15 +214,15 @@ function _set_networking_interfaces_ports($probe = false)
         }
 
         if (!array_key_exists($wanif, $iflist_all)) {
-            echo "\n" . __("Invalid interface name '%s'", $wanif) . "\n";
+            printf("\nInvalid interface name '%s'\n", $wanif);
             $wanif = '';
         }
     } while ($wanif == '');
 
     do {
-        echo "\n" . __("Enter the LAN interface name or 'a' for auto-detection") . "\n" .
-            __('NOTE: this enables full Firewalling/NAT mode.') . "\n" .
-            __('(or nothing if finished): ');
+        echo "\nEnter the LAN interface name or 'a' for auto-detection\n" .
+            "NOTE: this enables full Firewalling/NAT mode.\n" .
+            "(or nothing if finished): ";
 
         if ($interactive) {
             $lanif = chop(fgets($fp));
@@ -240,13 +244,17 @@ function _set_networking_interfaces_ports($probe = false)
         }
 
         if (!array_key_exists($lanif, $iflist_all)) {
-            echo "\n" . __("Invalid interface name '%s'", $lanif) . "\n";
+            printf("\nInvalid interface name '%s'\n", $lanif);
             unset($lanif);
         }
 
         if ($wanif != '' && $lanif == $wanif) {
             $lanif = '';
-            echo "\n" . __('Error: you cannot assign the same interface name twice!') . "\n";
+            echo <<<EOD
+
+Error: you cannot assign the same interface name twice!
+
+EOD;
         }
     } while ($lanif == '');
 
@@ -262,8 +270,8 @@ function _set_networking_interfaces_ports($probe = false)
             }
             $io = $i + 1;
 
-            echo "\n" . __("Enter the Optional interface %s name or 'a' for auto-detection", $io) . "\n" .
-                __('(or nothing if finished): ');
+            printf("\nEnter the Optional interface %s name or 'a' for auto-detection\n" .
+                "(or nothing if finished): ", $io);
 
             if ($interactive) {
                 $optif[$i] = chop(fgets($fp));
@@ -288,7 +296,7 @@ function _set_networking_interfaces_ports($probe = false)
             }
 
             if (!array_key_exists($optif[$i], $iflist_all)) {
-                echo "\n" . __("Invalid interface name '%s'", $optif[$i]) . "\n";
+                printf("\nInvalid interface name '%s'\n", $optif[$i]);
                 unset($optif[$i]);
                 continue;
             }
@@ -301,7 +309,11 @@ function _set_networking_interfaces_ports($probe = false)
                 for ($j = ($k + 1); $j < count($ifarr); $j++) {
                     if ($ifarr[$k] != '' && $ifarr[$k] == $ifarr[$j]) {
                         $again = true;
-                        echo "\n" . __('Error: you cannot assign the same interface name twice!') . "\n";
+                        echo <<<EOD
+
+Error: you cannot assign the same interface name twice!
+
+EOD;
                     }
                 }
             }
@@ -313,7 +325,7 @@ function _set_networking_interfaces_ports($probe = false)
     }
 
     if ($wanif != '' || $lanif != '' || count($optif)) {
-        echo "\n" . __('The interfaces will be assigned as follows:') . "\n\n";
+        echo "\nThe interfaces will be assigned as follows:\n\n";
 
         if ($wanif != '') {
             echo "WAN  -> " . $wanif . "\n";
@@ -325,12 +337,15 @@ function _set_networking_interfaces_ports($probe = false)
             echo "OPT" . ($i + 1) . " -> " . $optif[$i] . "\n";
         }
     } else {
-        echo "\n" . __('No interfaces will be assigned!') . "\n";
+        echo "\nNo interfaces will be assigned!\n";
     }
 
-    echo "\n" . __('Do you want to proceed?') . " {$yes_no_prompt}";
+    echo <<<EOD
+
+Do you want to proceed? {$yes_no_prompt}
+EOD;
     if ($interactive) {
-        $key = normalize_yes_no(chop(fgets($fp)));
+        $key = chop(fgets($fp));
     } else {
         $key = 'y';
         echo $key . PHP_EOL;
@@ -465,10 +480,10 @@ function _set_networking_interfaces_ports($probe = false)
         unset($config['interfaces']['opt' . ($i + 1)]);
     }
 
-    echo "\n" . __('Writing configuration...');
+    echo "\nWriting configuration...";
     flush();
     write_config("Console assignment of interfaces");
-    echo __('done.') . "\n";
+    echo "done.\n";
 
     fclose($fp);
 
@@ -479,8 +494,12 @@ function autodetect_interface($name, $fp)
 {
     $iflist_prev = get_interface_list(true);
 
-    echo "\n" . __('Connect the %s interface now and make sure that the link is up.', $name) . "\n";
-    echo __('Then press ENTER to continue.') . "\n";
+    echo <<<EOD
+
+Connect the {$name} interface now and make sure that the link is up.
+Then press ENTER to continue.
+
+EOD;
     fgets($fp);
 
     $iflist = get_interface_list(true);
@@ -488,13 +507,13 @@ function autodetect_interface($name, $fp)
     if (is_array($iflist)) {
         foreach ($iflist as $ifn => $ifa) {
             if (!isset($iflist_prev[$ifn])) {
-                echo __('Detected link-up: %s', $ifn) . "\n";
+                printf("Detected link-up: %s\n", $ifn);
                 return $ifn;
             }
         }
     }
 
-    echo __('No link-up detected.') . "\n";
+    echo "No link-up detected.\n";
 
     return '';
 }
@@ -502,13 +521,17 @@ function autodetect_interface($name, $fp)
 function lagg_setup($iflist, $fp)
 {
     $laggcfg = &config_read_array('laggs', 'lagg');
-    $yes_no_prompt = __('[y/N]: ');
+    $yes_no_prompt = '[y/N]: ';
 
     if (count($laggcfg)) {
-        echo "\n" . __('WARNING: all existing LAGGs will be cleared if you proceed!') . "\n\n";
-        echo __('Do you want to proceed?') . " {$yes_no_prompt}";
+        echo <<<EOD
 
-        if (strcasecmp(normalize_yes_no(chop(fgets($fp))), "y") != 0) {
+WARNING: all existing LAGGs will be cleared if you proceed!
+
+Do you want to proceed? {$yes_no_prompt}
+EOD;
+
+        if (strcasecmp(chop(fgets($fp)), "y") != 0) {
             return;
         }
     }
@@ -525,18 +548,18 @@ function lagg_setup($iflist, $fp)
         $lagg = [];
         $lagg['@attributes'] = ['uuid' => generate_uuid()];
 
-        echo "\n" . __('LAGG-capable interfaces:') . "\n\n";
+        echo "\nLAGG-capable interfaces:\n\n";
 
         foreach ($unused_ifs as $iface => $ifa) {
             echo sprintf("%-8s %s %s\n", $iface, $ifa['mac'], $ifa['descr']);
         }
 
         if (empty($unused_ifs)) {
-            echo __('No LAGG-capable interfaces detected.') . "\n";
+            echo "No LAGG-capable interfaces detected.\n";
             return;
         }
 
-        echo "\n" . __('Enter the LAGG members to aggregate (or nothing if finished): ');
+        echo "\nEnter the LAGG members to aggregate (or nothing if finished): ";
         $members_str = chop(fgets($fp));
 
         if ($members_str) {
@@ -546,7 +569,7 @@ function lagg_setup($iflist, $fp)
             $valid_ifs = array_intersect($unused_ifnames, $members);
             if (count($members) != count($valid_ifs)) {
                 $invalid_ifs = array_diff($members, $unused_ifnames);
-                echo "\n" . __('Invalid interfaces: %s', implode(", ", $invalid_ifs)) . "\n";
+                printf("\nInvalid interfaces: %s\n", implode(", ", $invalid_ifs));
                 continue;
             }
             $lagg['members'] = implode(',', $members);
@@ -557,21 +580,21 @@ function lagg_setup($iflist, $fp)
             break;
         }
 
-        echo __('Enter the LAGG protocol (default:none,lacp,failover,fec,loadbalance,roundrobin): ');
+        echo 'Enter the LAGG protocol (default:none,lacp,failover,fec,loadbalance,roundrobin): ';
         $lagg['proto'] = strtolower(chop(fgets($fp)));
         if (!in_array($lagg['proto'], ['none', 'lacp', 'failover', 'fec', 'loadbalance', 'roundrobin'])) {
             $lagg['proto'] = 'none';
         }
 
         if ($lagg['proto'] == "lacp") {
-            echo __('Do you want to enable LACP fast timeout?') . " {$yes_no_prompt}";
+            echo "Do you want to enable LACP fast timeout? {$yes_no_prompt}";
 
-            if (strcasecmp(normalize_yes_no(chop(fgets($fp))), "y") == 0) {
+            if (strcasecmp(chop(fgets($fp)), "y") == 0) {
                 $lagg['lacp_fast_timeout'] = true;
             }
         }
 
-        echo __('Enter the LAGG MTU (leave blank for auto): ');
+        echo 'Enter the LAGG MTU (leave blank for auto): ';
         $lagg['mtu'] = chop(fgets($fp));
         if (!$lagg['mtu']) {
             $lagg['mtu'] = null;
@@ -587,13 +610,17 @@ function lagg_setup($iflist, $fp)
 function vlan_setup($iflist, $fp)
 {
     $vlancfg = &config_read_array('vlans', 'vlan');
-    $yes_no_prompt = __('[y/N]: ');
+    $yes_no_prompt = '[y/N]: ';
 
     if (count($vlancfg)) {
-        echo "\n" . __('WARNING: all existing VLANs will be cleared if you proceed!') . "\n\n";
-        echo __('Do you want to proceed?') . " {$yes_no_prompt}";
+        echo <<<EOD
 
-        if (strcasecmp(normalize_yes_no(chop(fgets($fp))), "y") != 0) {
+WARNING: all existing VLANs will be cleared if you proceed!
+
+Do you want to proceed? {$yes_no_prompt}
+EOD;
+
+        if (strcasecmp(chop(fgets($fp)), "y") != 0) {
             return;
         }
     }
@@ -604,30 +631,30 @@ function vlan_setup($iflist, $fp)
     while (1) {
         $vlan = [];
 
-        echo "\n" . __('VLAN-capable interfaces:') . "\n\n";
+        echo "\nVLAN-capable interfaces:\n\n";
 
         foreach ($iflist as $iface => $ifa) {
             echo sprintf("%-8s %s %s\n", $iface, $ifa['mac'], $ifa['descr']);
         }
 
-        echo "\n" . __('Enter the parent interface name for the new VLAN (or nothing if finished): ');
+        echo "\nEnter the parent interface name for the new VLAN (or nothing if finished): ";
         $vlan['if'] = chop(fgets($fp));
 
         if ($vlan['if']) {
             if (!array_key_exists($vlan['if'], $iflist)) {
-                echo "\n" . __("Invalid interface name '%s'", $vlan['if']) . "\n";
+                printf("\nInvalid interface name '%s'\n", $vlan['if']);
                 continue;
             }
         } else {
             break;
         }
 
-        echo __('Enter the VLAN tag (1-4094): ');
+        echo 'Enter the VLAN tag (1-4094): ';
         $vlan['tag'] = chop(fgets($fp));
         $vlan['vlanif'] = "{$vlan['if']}_vlan{$vlan['tag']}";
         $vlan['@attributes'] = ['uuid' => generate_uuid()];
         if (!is_numericint($vlan['tag']) || ($vlan['tag'] < 1) || ($vlan['tag'] > 4094)) {
-            echo "\n" . __("Invalid VLAN tag '%s'", $vlan['tag']) . "\n";
+            printf("\nInvalid VLAN tag '%s'\n", $vlan['tag']);
             continue;
         }
 

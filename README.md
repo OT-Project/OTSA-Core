@@ -52,8 +52,8 @@ conservatively to keep future syncs feasible.
   `Scripts/version.sh`, custom pkg repository config and signing
   fingerprints under `src/etc/pkg/`.
 * **Localization** — full Vietnamese catalog at
-  `src/share/locale/vi_VN/LC_MESSAGES/OPNsense.po`, plus a console
-  language switcher at `src/opnsense/scripts/shell/langmode.php`.
+  `src/share/locale/vi_VN/LC_MESSAGES/OPNsense.po` (web UI only; the
+  console/shell scripts stay upstream English).
 * **Theme** — `src/opnsense/www/themes/otsa/` ("OTSA 2.0" neobrutalist
   theme with sidebar layout, dark mode, and BKCS branding).
 * **Menu trim for OT** — entries across

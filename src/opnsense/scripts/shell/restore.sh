@@ -27,44 +27,15 @@
 
 set -e
 
-# Get language mode
-CMD_LANGMODE="/usr/local/opnsense/scripts/shell/langmode.php"
-LANG_MODE="en"
-if [ -f "${CMD_LANGMODE}" ]; then
-	LANG_MODE=$(php "${CMD_LANGMODE}" get 2>/dev/null || echo "en")
-fi
-
-# Translation function
-__() {
-	if [ "${LANG_MODE}" = "vi" ]; then
-		case "$1" in
-			"No backups available.")
-				echo "Không có bản sao lưu nào."
-				;;
-			"Select backup to restore or leave blank to exit: ")
-				echo -n "Chọn bản sao lưu để khôi phục hoặc để trống để thoát: "
-				;;
-			"Do you want to reboot to apply the backup cleanly? [y/N]: ")
-				echo -n "Bạn có muốn khởi động lại để áp dụng bản sao lưu? [c/K]: "
-				;;
-			*)
-				echo "$1"
-				;;
-		esac
-	else
-		echo "$1"
-	fi
-}
-
 if [ ! -d /conf/backup ]; then
-	__ "No backups available."
+	echo "No backups available."
 	exit 0
 fi
 
 BACKUPS="$(cd /conf/backup; find . -name "config-*.xml")"
 
 if [ -z "${BACKUPS}" ]; then
-	__ "No backups available."
+	echo "No backups available."
 	exit 0
 fi
 
@@ -96,8 +67,7 @@ while [ -z "${RESTORE}" ]; do
 	done
 
 	echo
-	__ "Select backup to restore or leave blank to exit: "
-	read SELECT
+	read -p "Select backup to restore or leave blank to exit: " SELECT
 
 	if [ -z "${SELECT}" ]; then
 		exit 0
@@ -116,20 +86,7 @@ done
 
 cp /conf/backup/${RESTORE} /conf/config.xml
 
-__ "Do you want to reboot to apply the backup cleanly? [y/N]: "
-read YN
-
-# Normalize Vietnamese input
-if [ "${LANG_MODE}" = "vi" ]; then
-	case ${YN} in
-	[cC])
-		YN="y"
-		;;
-	[kK])
-		YN="n"
-		;;
-	esac
-fi
+read -p "Do you want to reboot to apply the backup cleanly? [y/N]: " YN
 
 case ${YN} in
 [yY])

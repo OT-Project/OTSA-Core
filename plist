@@ -1350,7 +1350,6 @@
 /usr/local/opnsense/scripts/shell/defaults.php
 /usr/local/opnsense/scripts/shell/firmware.sh
 /usr/local/opnsense/scripts/shell/halt.php
-/usr/local/opnsense/scripts/shell/langmode.php
 /usr/local/opnsense/scripts/shell/password.php
 /usr/local/opnsense/scripts/shell/ping.php
 /usr/local/opnsense/scripts/shell/reboot.php
