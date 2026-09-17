@@ -54,8 +54,11 @@ conservatively to keep future syncs feasible.
 * **Localization** — full Vietnamese catalog at
   `src/share/locale/vi_VN/LC_MESSAGES/OPNsense.po` (web UI only; the
   console/shell scripts stay upstream English).
-* **Theme** — `src/opnsense/www/themes/otsa/` ("OTSA 2.0" neobrutalist
-  theme with sidebar layout, dark mode, and KC01.04-21.30 branding).
+* **Theme** — two variants of the neobrutalist "OTSA 2.0" design with
+  sidebar layout and KC01.04-21.30 branding, sharing the Slate palette
+  and the `#2E8BC0` brand colour: `src/opnsense/www/themes/otsa/`
+  (light, shipped as the default) and
+  `src/opnsense/www/themes/otsa-dark/`.
 * **Menu trim for OT** — entries across
   `src/opnsense/mvc/app/models/OPNsense/*/Menu/Menu.xml` are reduced
   and renamed:
@@ -85,7 +88,7 @@ Repository layout
 |------|---------|
 | `src/etc/` | FreeBSD system configuration shipped with the appliance |
 | `src/opnsense/mvc/` | PHP MVC application (models, controllers, views, forms) |
-| `src/opnsense/www/themes/otsa/` | OTSA theme assets and compiled CSS |
+| `src/opnsense/www/themes/otsa{,-dark}/` | OTSA theme assets and compiled CSS |
 | `src/opnsense/scripts/` | Console and service-side scripts |
 | `src/www/` | Legacy PHP pages (firewall, interfaces, services) |
 | `src/share/locale/vi_VN/` | Vietnamese translation catalog |

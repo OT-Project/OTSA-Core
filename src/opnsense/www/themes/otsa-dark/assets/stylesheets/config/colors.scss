@@ -1,0 +1,52 @@
+// OTSA Design Tokens — Dark Theme (from ui.pen mockup)
+// Palette: Slate series (dark) + brand #2E8BC0, paired with otsa
+
+$colors: (
+  // Brand
+  brand-primary: #2E8BC0,
+
+  // Backgrounds
+  body-background: #020617,
+  content-background: #0F172A,
+  navbar-default-bg: #020617,
+  page-content-head-background: #1E293B,
+  page-foot-background: #0F172A,
+  login-modal-head-background: #1E293B,
+
+  // Text
+  text-color: #F1F5F9,
+  navbar-default-color: #F1F5F9,
+  list-group-link-color: #94A3B8,
+
+  // Borders
+  border-default: #334155,
+  border-highlight: #64748B,
+
+  // Tables
+  table-bg-accent: #1E293B,
+
+  // Dashboard
+  dashboard-widget-error: #EF4444,
+
+  // Badges / Chips
+  chip-background: #2E8BC0,
+  chip-text: #FFF,
+
+  // ISA-18.2 Alarm Colors
+  alarm-critical: #EF4444,
+  alarm-high: #F97316,
+  alarm-warning: #EAB308,
+  alarm-info: #3B82F6,
+  status-healthy: #22C55E,
+  status-disabled: #9CA3AF,
+
+  // Surfaces
+  bg-surface: #1E293B,
+  bg-surface-elevated: #334155,
+  bg-sidebar: #020617,
+
+  // Text variants
+  text-primary: #F1F5F9,
+  text-secondary: #94A3B8,
+  text-muted: #64748B,
+);
