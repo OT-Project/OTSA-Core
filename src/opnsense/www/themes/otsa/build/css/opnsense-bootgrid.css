@@ -5,19 +5,19 @@
   font-size: 15px;
   background-color: transparent;
   border: none;
-  border-top: 1px solid #E5E5E5;
+  border-top: 1px solid #e2e8f0;
 }
 
 /* theme: header */
 .tabulator .tabulator-header {
   background-color: transparent;
   border-bottom: none;
-  border-left: 1px solid #E5E5E5;
+  border-left: 1px solid #e2e8f0;
 }
 
 .tabulator .tabulator-header .tabulator-col {
-  border-right: 1px solid #E5E5E5;
-  background-color: #5570F1;
+  border-right: 1px solid #e2e8f0;
+  background-color: #2e8bc0;
   color: #FFF;
 }
 
@@ -29,7 +29,7 @@
 .tabulator .tabulator-headers {
   height: 100% !important;
   /* make sure the border below appears */
-  border-bottom: 1px solid #E5E5E5;
+  border-bottom: 1px solid #e2e8f0;
 }
 
 /*------------*/
@@ -40,11 +40,11 @@
 
 .tabulator-row {
   background-color: transparent;
-  color: #373736;
+  color: #1e293b;
 }
 
 .tabulator-row.tabulator-row-odd {
-  background-color: #FBFBFB;
+  background-color: #f8fafc;
 }
 
 .tabulator-row.tabulator-row-odd.tabulator-selectable:hover:not(.tabulator-selected) {
@@ -73,7 +73,7 @@
 }
 
 .tabulator .tabulator-alert .tabulator-alert-msg.tabulator-alert-state-msg {
-  color: #373736;
+  color: #1e293b;
   /* spinner icon */
 }
 
@@ -86,11 +86,11 @@
 
 .tabulator-row.tabulator-group .span {
   margin-left: 0;
-  color: #373736;
+  color: #1e293b;
 }
 
 .tabulator-row .badge.chip {
-  background-color: #31708f;
+  background-color: #2e8bc0;
   color: #FFF;
   font-size: 10px;
   padding: 2px 4px;
@@ -110,9 +110,9 @@
 
 /* Checkbox column styles */
 .tabulator .tabulator-header .tabulator-frozen.tabulator-frozen-left {
-  border-right: 1px solid #E5E5E5;
+  border-right: 1px solid #e2e8f0;
   /* separates checkbox column from table rows */
-  border-left: 1px solid #FBFBFB;
+  border-left: 1px solid #f8fafc;
 }
 
 .tabulator-row .tabulator-cell.tabulator-frozen.tabulator-frozen-left {
@@ -122,7 +122,7 @@
   width: 16px !important;
   height: 16px !important;
   cursor: pointer;
-  accent-color: #5570F1;
+  accent-color: #2e8bc0;
   margin: 0;
 }
 
@@ -148,42 +148,42 @@
 
 .tabulator .tabulator-footer .tabulator-page {
   background-color: #fff;
-  color: #5570F1;
+  color: #2e8bc0;
 }
 
 .tabulator .tabulator-footer .tabulator-page.active {
-  background-color: #5570F1;
-  border-color: #5570F1;
+  background-color: #2e8bc0;
+  border-color: #2e8bc0;
   cursor: default;
   color: #fff;
 }
 
 .tabulator .tabulator-footer .tabulator-page:not(disabled):hover {
   color: rgb(18.9836956522, 55.5951086957, 230.5163043478);
-  background-color: #eeeeee;
+  background-color: #e2e8f0;
   border-color: #ddd;
 }
 
 .tabulator .tabulator-footer .tabulator-page:not(disabled).active:hover {
-  background-color: #5570F1;
-  border-color: #5570F1;
+  background-color: #2e8bc0;
+  border-color: #2e8bc0;
   color: #fff;
   cursor: default;
 }
 
 .tabulator-page-counter {
-  color: #373736;
+  color: #1e293b;
 }
 
 .tabulator .tabulator-footer .tabulator-paginator {
-  color: #373736;
+  color: #1e293b;
 }
 
 .tabulator .tabulator-footer .tabulator-page {
   border-radius: 0px;
   margin: 0px;
   padding: 6px 12px;
-  border: 1px solid #E5E5E5;
+  border: 1px solid #e2e8f0;
 }
 
 /*----------*/
@@ -208,7 +208,7 @@
   height: 40px !important;
   justify-content: center;
   border-left: 0px !important;
-  background-color: #5570F1 !important;
+  background-color: #2e8bc0 !important;
   color: #FFF !important;
 }
 

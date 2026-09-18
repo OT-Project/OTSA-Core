@@ -21,12 +21,12 @@
 .tabulator .tabulator-header .tabulator-col {
     border-right: 1px solid map-get($colors, border-default);
     background-color: map-get($colors, brand-primary);
-    color: #F9FAFB;
+    color: #F1F5F9;
 }
 
 .tabulator .tabulator-header .tabulator-col.tabulator-sortable.tabulator-col-sorter-element:hover {
     background-color: color.adjust(map-get($colors, brand-primary), $lightness: -10%);
-    color: #F9FAFB;
+    color: #F1F5F9;
 }
 
 .tabulator .tabulator-headers {
@@ -52,7 +52,7 @@
 }
 
 .tabulator-row.tabulator-row-odd.tabulator-selectable:hover:not(.tabulator-selected) {
-    background-color: #4B5563;
+    background-color: #475569;
 }
 
 .tabulator-row.tabulator-row-even {
@@ -60,7 +60,7 @@
 }
 
 .tabulator-row.tabulator-row-even.tabulator-selectable:hover:not(.tabulator-selected) {
-    background-color: #4B5563;
+    background-color: #475569;
 }
 
 .tabulator .tabulator-tableholder {
@@ -68,12 +68,12 @@
 }
 
 .tabulator-row.tabulator-selected {
-    background-color: #4B5563;
+    background-color: #475569;
 }
 
 .tabulator-row.tabulator-selected:hover {
     cursor: pointer;
-    background-color: #4B5563;
+    background-color: #475569;
 }
 
 .tabulator .tabulator-alert .tabulator-alert-msg.tabulator-alert-state-msg {
@@ -140,7 +140,7 @@
         -moz-appearance: none;
         appearance: none;
         background-color: #354150;
-        border: 1px solid #6B7280;
+        border: 1px solid #64748B;
         border-radius: 3px;
         margin: 0;
         position: relative;
@@ -205,8 +205,8 @@
 
 .tabulator .tabulator-footer .tabulator-page:not(disabled):hover {
     color: color.adjust(map-get($colors, brand-primary), $lightness: -15%);
-    background-color: #4B5563;
-    border-color: #6B7280;
+    background-color: #475569;
+    border-color: #64748B;
 }
 
 .tabulator .tabulator-footer .tabulator-page:not(disabled).active:hover {

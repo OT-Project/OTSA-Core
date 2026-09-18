@@ -62,7 +62,7 @@ def load_model_config():
             config['rtp_port_range_start'] = general.findtext('rtp_port_range_start', '5000')
             config['rtp_port_range_end'] = general.findtext('rtp_port_range_end', '5100')
             config['nat_enabled'] = general.findtext('nat_enabled', '1') == '1'
-            config['gateway_alias'] = general.findtext('gateway_alias', 'OT-SA-H323')
+            config['gateway_alias'] = general.findtext('gateway_alias', 'OTSA-H323')
             config['outbound_interface'] = general.findtext('outbound_interface', '')
             config['upstream_server'] = general.findtext('upstream_server', '')
         

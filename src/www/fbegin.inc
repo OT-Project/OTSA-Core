@@ -39,7 +39,7 @@ $aclObj = new \OPNsense\Core\ACL();
       <div class="navbar-header">
         <a class="navbar-brand" href="/index.php">
 <?php
-$theme = 'opnsense';
+$theme = 'otsa';
 if (isset($config['theme']) && is_dir('/usr/local/opnsense/www/themes/' . $config['theme'])) {
     $theme = $config['theme'];
 }

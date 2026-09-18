@@ -49,7 +49,7 @@
 
 .grid-stack-item-content {
   text-align: left;
-  border: 1px solid #E5E5E5;
+  border: 1px solid #e2e8f0;
   border-radius: 12px;
   background-color: #FFF;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -74,8 +74,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #FAFAFA;
-  border-bottom: 1px solid #E5E5E5;
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
 }
 
 .widget-spinner {
@@ -90,7 +90,7 @@
   vertical-align: middle;
   text-align: right;
   cursor: pointer;
-  color: #757575;
+  color: #64748b;
   transition: color 0.2s ease, background-color 0.2s ease;
 }
 
@@ -120,7 +120,7 @@
   align-items: center;
   font-size: 15px;
   font-weight: 600;
-  color: #373736;
+  color: #1e293b;
 }
 
 .panel-divider {
@@ -135,7 +135,7 @@
 .widget-content-body {
   padding: 14px;
   font-size: 15px;
-  color: #373736;
+  color: #1e293b;
 }
 
 /* When widgets render content directly under .widget-content */
@@ -165,7 +165,7 @@ td {
   display: inline-block;
   height: 1px;
   width: 70%;
-  background: #5570F1;
+  background: #2e8bc0;
   margin: 5px;
 }
 
@@ -316,7 +316,7 @@ div {
 }
 
 .flextable-row:hover {
-  background: #F7F7F7 !important;
+  background: #f1f5f9 !important;
 }
 
 .flex-cell {
@@ -341,7 +341,7 @@ div {
 }
 
 .column .flex-cell:hover {
-  background: #F7F7F7;
+  background: #f1f5f9;
 }
 
 .flex-subcell {
@@ -368,7 +368,7 @@ div {
 }
 
 .grid-row:hover {
-  background: #F7F7F7 !important;
+  background: #f1f5f9 !important;
 }
 
 .grid-header {

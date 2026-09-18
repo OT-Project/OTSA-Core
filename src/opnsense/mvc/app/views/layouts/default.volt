@@ -16,7 +16,7 @@
 
   <!-- TODO: Change the name of the product -->
   <title>{{headTitle|default("OTSA") }} | {{system_hostname}}.{{system_domain}}</title>
-  {% set theme_name = ui_theme|default('opnsense') %}
+  {% set theme_name = ui_theme|default('otsa') %}
 
   <!-- Favicon -->
   <link href="{{ cache_safe('/ui/themes/%s/build/images/favicon.png' | format(theme_name)) }}" rel="shortcut icon">

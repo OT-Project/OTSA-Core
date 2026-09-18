@@ -1,7 +1,7 @@
 :root {
-  --chart-js-font-color: #F9FAFB;
-  --chart-js-background-color: #1F2937;
-  --chart-js-border-color: #374151;
+  --chart-js-font-color: #F1F5F9;
+  --chart-js-background-color: #1E293B;
+  --chart-js-border-color: #334155;
 }
 
 .ui-resizable-handle {
@@ -54,9 +54,9 @@ transition-check {
 
 .grid-stack-item-content {
   text-align: left;
-  border: 1px solid #374151;
+  border: 1px solid #334155;
   border-radius: 12px;
-  background-color: #1F2937;
+  background-color: #1E293B;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   overflow: hidden;
 }
@@ -79,8 +79,8 @@ transition-check {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #374151;
-  border-bottom: 1px solid #374151;
+  background: #334155;
+  border-bottom: 1px solid #334155;
 }
 
 .widget-spinner {
@@ -95,7 +95,7 @@ transition-check {
   vertical-align: middle;
   text-align: right;
   cursor: pointer;
-  color: #9CA3AF;
+  color: #94A3B8;
   transition: color 0.2s ease, background-color 0.2s ease;
 }
 
@@ -125,7 +125,7 @@ transition-check {
   align-items: center;
   font-size: 15px;
   font-weight: 600;
-  color: #F9FAFB;
+  color: #F1F5F9;
 }
 
 .panel-divider {
@@ -140,7 +140,7 @@ transition-check {
 .widget-content-body {
   padding: 14px;
   font-size: 15px;
-  color: #F9FAFB;
+  color: #F1F5F9;
 }
 
 /* When widgets render content directly under .widget-content */
@@ -170,7 +170,7 @@ td {
   display: inline-block;
   height: 1px;
   width: 70%;
-  background: #5570F1;
+  background: #2E8BC0;
   margin: 5px;
 }
 
@@ -306,14 +306,14 @@ div {
   display: flex;
   flex-flow: row wrap;
   padding: 0.5em 0.5em;
-  border-top: solid 1px rgba(85, 112, 241, 0.15);
+  border-top: solid 1px rgba(46, 139, 192, 0.15);
 }
 
 .flextable-row {
   display: flex;
   flex-flow: row wrap;
   padding: 0.5em 0.5em;
-  border-top: solid 1px rgba(85, 112, 241, 0.15);
+  border-top: solid 1px rgba(46, 139, 192, 0.15);
   align-items: center;
 }
 
@@ -322,7 +322,7 @@ div {
 }
 
 .flextable-row:hover {
-  background: #1F2937 !important;
+  background: #0F172A !important;
 }
 
 .flex-cell {
@@ -343,11 +343,11 @@ div {
   width: 100%;
   padding: 0;
   border: 0;
-  border-top: rgba(85, 112, 241, 0.15);
+  border-top: rgba(46, 139, 192, 0.15);
 }
 
 .column .flex-cell:hover {
-  background: #1F2937;
+  background: #0F172A;
 }
 
 .flex-subcell {
@@ -356,7 +356,7 @@ div {
 }
 
 .column .flex-cell:not(:last-child) {
-  border-bottom: solid 1px rgba(85, 112, 241, 0.15);
+  border-bottom: solid 1px rgba(46, 139, 192, 0.15);
 }
 
 /* ----- */
@@ -369,16 +369,16 @@ div {
 .grid-row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  border-top: 1px solid rgba(85, 112, 241, 0.15);
+  border-top: 1px solid rgba(46, 139, 192, 0.15);
   opacity: 0.4;
 }
 
 .grid-row:hover {
-  background: #1F2937 !important;
+  background: #0F172A !important;
 }
 
 .grid-header {
-  border-top: 1px solid rgba(85, 112, 241, 0.15);
+  border-top: 1px solid rgba(46, 139, 192, 0.15);
   font-weight: bold;
 }
 

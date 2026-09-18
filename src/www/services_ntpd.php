@@ -370,7 +370,7 @@ endforeach ?>
                         </div>
                       </td>
                     </tr>
-                    <!-- TODO: Hide for OT-SA -->
+                    <!-- TODO: Hide for OTSA -->
                     <!-- <tr>
                     <td><a id="help_for_orphan" href="#" class="showhelp"><i class="fa fa-info-circle"></i></a> <?= gettext('Orphan mode')?></td>
                     <td>
@@ -418,7 +418,7 @@ endforeach ?>
                         </div>
                       </td>
                     </tr>
-                    <!-- TODO: Hide for OT-SA -->
+                    <!-- TODO: Hide for OTSA -->
                     <!-- <tr style="display:none">
                     <td><i class="fa fa-info-circle text-muted"></i> <?= gettext('Statistics logging')?></td>
                     <td>

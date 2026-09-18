@@ -10,7 +10,7 @@
     <mirrors allow_custom="true">
         <mirror>
             <url>http://192.168.150.49</url>
-            <description>OTSA Repository (BKCS)</description>
+            <description>OTSA Repository (KC01.04-21.30)</description>
         </mirror>
     </mirrors>
     <flavours>

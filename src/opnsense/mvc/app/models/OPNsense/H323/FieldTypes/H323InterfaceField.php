@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (C) 2024 OT-SA Contributors
+ * Copyright (C) 2024 OTSA Contributors
  * All rights reserved.
  */
 

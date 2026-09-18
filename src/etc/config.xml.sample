@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <opnsense>
   <trigger_initial_wizard/>
-  <theme>opnsense</theme>
+  <theme>otsa</theme>
   <sysctl/>
   <system>
     <optimization>normal</optimization>

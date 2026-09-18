@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# OT-SA SSH User Access Management — Reconfigure Script
+# OTSA SSH User Access Management — Reconfigure Script
 # Called by configd action: sshmanagement configure
 #
 # Authorized keys, shell, and group memberships are written by

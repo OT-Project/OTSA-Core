@@ -1,9 +1,9 @@
 @import "config/colors";
 
 :root {
-    --chart-js-font-color: #F9FAFB;
-    --chart-js-background-color: #1F2937;
-    --chart-js-border-color: #374151;
+    --chart-js-font-color: #F1F5F9;
+    --chart-js-background-color: #1E293B;
+    --chart-js-border-color: #334155;
 }
 
 .ui-resizable-handle {
@@ -56,9 +56,9 @@ transition-check {
 
 .grid-stack-item-content {
     text-align: left;
-    border: 1px solid #374151;
+    border: 1px solid #334155;
     border-radius: 12px;
-    background-color: #1F2937;
+    background-color: #1E293B;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     overflow: hidden;
 }
@@ -81,8 +81,8 @@ transition-check {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #374151;
-    border-bottom: 1px solid #374151;
+    background: #334155;
+    border-bottom: 1px solid #334155;
 }
 
 .widget-spinner {
@@ -97,7 +97,7 @@ transition-check {
     vertical-align: middle;
     text-align: right;
     cursor: pointer;
-    color: #9CA3AF;
+    color: #94A3B8;
     transition: color 0.2s ease, background-color 0.2s ease;
 }
 
@@ -127,7 +127,7 @@ transition-check {
     align-items: center;
     font-size: 15px;
     font-weight: 600;
-    color: #F9FAFB;
+    color: #F1F5F9;
 }
 
 .panel-divider {
@@ -142,7 +142,7 @@ transition-check {
 .widget-content-body {
     padding: 14px;
     font-size: 15px;
-    color: #F9FAFB;
+    color: #F1F5F9;
 }
 
 /* When widgets render content directly under .widget-content */

@@ -3,17 +3,17 @@
 }
 
 .bootstrap-dialog .modal-content {
-  background-color: #1F2937;
-  border: 1px solid #374151;
+  background-color: #1E293B;
+  border: 1px solid #334155;
 }
 .bootstrap-dialog .modal-header {
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
-  background-color: #374151;
-  border-bottom: 1px solid #374151;
+  background-color: #334155;
+  border-bottom: 1px solid #334155;
 }
 .bootstrap-dialog .bootstrap-dialog-title {
-  color: #F9FAFB;
+  color: #F1F5F9;
   display: inline-block;
 }
 .bootstrap-dialog .bootstrap-dialog-button-icon {
@@ -25,7 +25,7 @@
   -moz-opacity: 0.9;
   -khtml-opacity: 0.9;
   opacity: 0.9;
-  color: #9CA3AF;
+  color: #94A3B8;
 }
 .bootstrap-dialog .bootstrap-dialog-close-button:hover {
   cursor: pointer;
@@ -33,29 +33,29 @@
   -moz-opacity: 1;
   -khtml-opacity: 1;
   opacity: 1;
-  color: #F9FAFB;
+  color: #F1F5F9;
 }
 .bootstrap-dialog .modal-body {
-  background-color: #1F2937;
-  color: #F9FAFB;
+  background-color: #1E293B;
+  color: #F1F5F9;
 }
 .bootstrap-dialog .bootstrap-dialog-message {
-  color: #F9FAFB;
+  color: #F1F5F9;
 }
 .bootstrap-dialog {
   /* dialog types */
 }
 .bootstrap-dialog.type-default .modal-header {
-  background-color: #1F2937;
+  background-color: #1E293B;
 }
 .bootstrap-dialog.type-default .bootstrap-dialog-title {
-  color: #F9FAFB;
+  color: #F1F5F9;
 }
 .bootstrap-dialog.type-info .modal-header {
   background-color: #B0CDDB;
 }
 .bootstrap-dialog.type-primary .modal-header {
-  background-color: #5570F1;
+  background-color: #2E8BC0;
 }
 .bootstrap-dialog.type-success .modal-header {
   background-color: #9BD275;
@@ -131,5 +131,3 @@
 .bootstrap-dialog {
   /** End of icon animation **/
 }
-
-/*# sourceMappingURL=bootstrap-dialog.css.map */

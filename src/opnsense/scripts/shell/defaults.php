@@ -30,18 +30,18 @@
 require_once("util.inc");
 require_once("config.inc");
 require_once("system.inc");
-require_once("/usr/local/opnsense/scripts/shell/langmode.php");
 
 $fp = fopen('php://stdin', 'r');
-$yes_no_prompt = __('[y/N]: ');
+$yes_no_prompt = '[y/N]: ';
 
-$_t1 = __('You are about to reset the firewall to factory defaults.');
-$_t2 = __('The firewall will shut down directly after completion.');
-$_t3 = __('Do you want to proceed?') . ' ';
+echo <<<EOD
+You are about to reset the firewall to factory defaults.
+The firewall will shut down directly after completion.
 
-echo "{$_t1}\n{$_t2}\n\n{$_t3}{$yes_no_prompt}";
+Do you want to proceed? {$yes_no_prompt}
+EOD;
 
-if (strcasecmp(normalize_yes_no(chop(fgets($fp))), 'y') == 0) {
+if (strcasecmp(chop(fgets($fp)), 'y') == 0) {
     reset_factory_defaults();
 }
 
